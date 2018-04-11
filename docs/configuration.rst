@@ -27,11 +27,7 @@ Add ``axes.backends.AxesModelBackend`` to the top of ``AUTHENTICATION_BACKENDS``
 
 Run ``python manage.py migrate`` to sync the database.
 
-Configure `django-ipware <https://github.com/un33k/django-ipware/>`_ to your liking. Pay close attention to the  `IPWARE_META_PRECEDENCE_ORDER <https://github.com/un33k/django-ipware#precedence-order>`_ setting. Please note that this configuration is required for functional security in your project. A good starting point for a project running without a reverse proxy could be::
-
-    IPWARE_META_PRECEDENCE_ORDER = (
-        'REMOTE_ADDR',
-    )
+Configure `AXES_IPWARE_PROXY_COUNT` and `AXES_IPWARE_REQUEST_HEADER_ORDER` as per `django-ipware <https://github.com/un33k/django-ipware/>`_ instructions if you are running behind a reverse proxy. Pay close attention to the  `AXES_IPWARE_REQUEST_HEADER_ORDER <https://github.com/un33k/django-ipware#precedence-order>`_ setting. Please note that this configuration is very important for functional security in your project.
 
 Things to you might need to change in your code, especially if you get a ``AxesModelBackend.RequestParameterRequired``:
 

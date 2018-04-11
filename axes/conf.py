@@ -53,3 +53,11 @@ class MyAppConf(AppConf):
 
     # message to show when locked out and have cooloff disabled
     PERMALOCK_MESSAGE = 'Account locked: too many login attempts. Contact an admin to unlock your account.'
+
+    # set to the amount of proxies you are using if you have reverse proxies configured
+    IPWARE_PROXY_COUNT = None
+
+    # set to a trusted header value if your reverse proxy is configured to set it to the HTTP request
+    IPWARE_REQUEST_HEADER_ORDER = (
+        'REMOTE_ADDR',
+    )
